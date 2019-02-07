@@ -29,13 +29,16 @@ public class ApplePicker : MonoBehaviour {
         foreach (GameObject tGO in tAppleArray) {
             Destroy(tGO);
         }
+
+        int basketIndex = basketList.Count - 1;
+        GameObject tBasketGo = basketList[basketIndex];
         //Remove the Basket from the list and destroy the GameObject
         basketList.RemoveAt( basketIndex );
-        Destroy( tBasketGO );
+        Destroy(tBasketGo);
 
         //If there are no Baskets left, restart the game
         if (basketList.Count == 0) {
-            SceneManager.LoadScene("Apple_Picker_Project");
+            SceneManager.LoadScene("Apple Picker Project");
         }
     }
 
