@@ -14,13 +14,14 @@ public class ApplePicker : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        //the code for the number of baskets
         basketList = new List<GameObject>();
 		for (int i=0; i<numBaskets; i++) {
             GameObject tBasketGO = Instantiate<GameObject>(basketPrefab);
-            Vector3 pos = Vector3.zero;
-            pos.y = basketBottomY + (basketSpacingY * i);
-            tBasketGO.transform.position = pos;
-            basketList.Add(tBasketGO);
+            Vector3 pos = Vector3.zero; //variable pos set to 0,0,0
+            pos.y = basketBottomY + (basketSpacingY * i); //sets basket to 0, -14, 0, then the next one to 0, -12, 0, then 0, -10, 0
+            tBasketGO.transform.position = pos; 
+            basketList.Add(tBasketGO); //puts basket in list
         }
     }
    public void AppleDestroyed() {
